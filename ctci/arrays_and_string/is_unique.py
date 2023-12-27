@@ -9,7 +9,7 @@ Hints: #44, #117, #132
 def initial_soln(number_str) -> str :
     looked = set()
     for digit in number_str:
-        if digit in looked: # check if looked array is not empty and the currenlty processed digit exist, flag False
+        if digit in looked: # check if the currently processed digit already exist, return False
             return False
         looked.add(digit)
                 
