@@ -17,6 +17,7 @@ def initial_count_rotations_linear_soln(nums):
         print('Position is : ', position)
         if position > 0 and (nums[position] - nums[position - 1] < 0):
             return position
+        elif position == len(nums) - 1: return 0
         
         # Move to the next position
         position += 1
