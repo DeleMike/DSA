@@ -53,6 +53,9 @@ def middleNode(head):
     middle_node_value = values[len(values) // 2]
     return middle_node_value
 
+    # Time complexity: O(n)
+    # space complexity: O(1)
+
 def betterMiddleNode(head):
     """
     :type head: ListNode
@@ -61,12 +64,17 @@ def betterMiddleNode(head):
     middle = head
     end = head
     
-    # we 
+    # we use two pointers
+    # Still O(n)
+    # space complexity is O(1)
     while (end!=None and end.next != None):
         middle = middle.next
         end = end.next.next
     
-    return middle;
+    return middle
+
+    # Time complexity: O(n)
+    # space complexity: O(1)
     
 
 
