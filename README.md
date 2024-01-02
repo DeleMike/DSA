@@ -1,3 +1,3 @@
 # DSA
 
-A repository to pratice Data Structures and Algorithms primarily.
+A repository to my personal pratice in Data Structures and Algorithms.
