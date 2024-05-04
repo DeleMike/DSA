@@ -73,7 +73,29 @@ def binary_search(arr, low, high, element):
     
     return -1 # not found
 
-print(binary_search(arr=[1,2,3,4,5,6,7,8,9], low=0, high=len([1,2,3,4,5,6,7,8,9]) - 1, element=5))
+# print(binary_search(arr=[1,2,3,4,5,6,7,8,9], low=0, high=len([1,2,3,4,5,6,7,8,9]) - 1, element=5))
+
+
+def array_sum(nums):
+    """Given an integer array, nums, return an array containing its running sum at every index
+    [1,2,3] -> [1,3,6]; [10]->[10]
+    """
+    # time complexity = O(n), space complexity = O(n): we created a new array 
+    # sum = 0
+    # new_arr = []
+    # for index, num in enumerate(nums):
+    #     sum += num
+    #     new_arr.append(sum)
+    # return new_arr
+
+    # time complexity = O(n), space complexity = O(1) 
+    for i in range(1,len(nums)):
+        nums[i] += nums[i-1]
+    return nums
+
+print(array_sum([10]))
+
+    
         
  
     
