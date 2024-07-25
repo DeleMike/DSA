@@ -10,3 +10,6 @@ def maxProfit(self, prices: List[int]) -> int:
             l = r
         r+=1
     return maxProfit
+
+# time complexity = O(n)
+# space complexity = O(1)
