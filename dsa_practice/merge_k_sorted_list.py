@@ -12,7 +12,7 @@ def mergeKLists(lists):
         #  we want perform this operation an every log k step, hence this is why step is 2
         # we might have this [[1,4,5],[1,3,4],[2,6]]
         # we want to consider [1,4,5] & [1,3,4] separately, and then [2,6] & None
-        # after sorting (which is O(n)) we will have [1,1,3,4,4,5] and [2,6]
+        # after merging (which is O(n)) we will have [1,1,3,4,4,5] and [2,6]
         # repeat until one element is left in the 'lists'
         for i in range(0, len(lists), 2):
             l1 = lists[i]
