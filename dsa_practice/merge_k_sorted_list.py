@@ -44,7 +44,7 @@ def mergeDataList(l1, l2):
 
     return dummy.next
 
-# time complexity: n(log k)
+# time complexity: O(nlog k)
 # space complexity: O(1)
 
 
