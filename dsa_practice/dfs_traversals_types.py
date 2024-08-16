@@ -13,6 +13,21 @@ def preOrderTraversal(root):
         print(root.data, end = ' ')
         preOrderTraversal(root.left)
         preOrderTraversal(root.right)
+
+def iterPreOrderTraversal(root):
+    if not root:
+        return []
+    
+    stack = [root]
+    
+    while stack:
+        curr = stack.pop()
+        print(curr.data, end=' ')
+        
+        if curr.right:
+            stack.append(curr.right)
+        if curr.left:
+            stack.append(curr.left)
     
 root = TreeNode(1)
 root.left = TreeNode(2)
@@ -21,6 +36,9 @@ root.left.left = TreeNode(4)
 root.left.right = TreeNode(5)
 
 preOrderTraversal(root)
+print('\n')
+iterPreOrderTraversal(root)
+            
 
 
 def inOrderTraversal(root):
@@ -36,7 +54,25 @@ root.right = TreeNode(3)
 root.left.left = TreeNode(4)
 root.left.right = TreeNode(5)
 
-inOrderTraversal(root)     
+# inOrderTraversal(root)   
+def iterativeInoderDFS(root):
+    stack = []
+    curr = root
+    while stack or curr:
+        while curr:
+            stack.append(curr)
+            curr = curr.left
+            
+        curr = stack.pop()    
+        print(curr.data, end=' ')
+        curr = curr.right
+        
+root = TreeNode(1)
+root.left = TreeNode(2)
+root.right = TreeNode(3)
+root.left.left = TreeNode(4)
+root.left.right = TreeNode(5)
+iterativeInoderDFS(root)
 
 
 def postOrderTraversal(root):
@@ -45,12 +81,25 @@ def postOrderTraversal(root):
         postOrderTraversal(root.right)
         print(root.data, end=' ')
 
-print('\n')
+def iterPostOrderTraversal(root):
+    stack = []
+    curr = root
+    while stack or curr:
+        while curr:
+            stack.append(curr)
+            curr = curr.right
+        curr = stack.pop()
+        print(curr.data, end=' ')
+        curr = curr.left
+    
 root = TreeNode(1)
 root.left = TreeNode(2)
 root.right = TreeNode(3)
 root.left.left = TreeNode(4)
 root.left.right = TreeNode(5)
 
+print('\n')
 postOrderTraversal(root)
+print('\n')
+iterPostOrderTraversal(root)
  

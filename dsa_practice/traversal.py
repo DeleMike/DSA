@@ -5,6 +5,32 @@ class TreeNode(object):
         self.val = val
         self.left = left
         self.right = right
+        
+    def __str__(self):
+        return f'{self.val}'
+        # return f'TreeNode(val: {self.val}, left:{self.left}, right:{self.right})'
+    
+def bfs_levels(root):
+    if not root:
+        return []
+    
+    queue = deque([root])
+    result = []
+    
+    while queue:
+        level = []
+        for _ in range(len(queue)):
+            node = queue.popleft()
+            level.append(node.val)
+            
+            if node.left:
+                queue.append(node.left)
+            if node.right:
+                queue.append(node.right)
+        result.append(level)
+    
+    print('Result = ', result)
+    
 
 def bfs(root):
     if not root:
@@ -60,6 +86,9 @@ root.left.right = TreeNode(5)
 
 print("BFS Traversal:")
 bfs(root)  # Output: 1 2 3 4 5
+
+print('\nLEVELS BFS TRAVERSAL:')
+bfs_levels(root)
 
 print("\nDFS Iterative Traversal:")
 dfs_iterative(root)  # Output: 1 2 4 5 3
