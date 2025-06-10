@@ -1,4 +1,13 @@
 def binary_search(items: list[int], target: int) -> int|None:
+    """Binary search a list for a target value
+
+    Args:
+        items (list[int]): List of items to be searched. must be in ascending order
+        target (int): target value to find in search space
+
+    Returns:
+        int|None: Returns target value position or NULL
+    """
     low = 0
     high = len(items)-1
     
